@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="part3" default="test">
+    <target name="clean" description="remove intermediate files">
+        <delete dir="build"/>
+    </target>
+    <target name="compile" depends="clean" description="compile the Java source code to class files">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="../" destdir="build/classes" includeantruntime="false"/>
+    </target>
+	<target name="test" depends="compile">
+        <java classpath="build/classes" classname="parser.tc">
+		  <arg value="${flags}"/>
+        <arg value="${source}"/>
+        <arg value="${target}"/>
+        </java>
+    </target>
+</project>

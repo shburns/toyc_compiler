@@ -1,0 +1,3 @@
+from toyc > java -cp build\classes parser.tc -v  tests\scanTest.tc
+
+javac -sourcepath 
